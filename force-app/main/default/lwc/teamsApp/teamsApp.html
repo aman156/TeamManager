@@ -1,0 +1,6 @@
+<template>  
+    <template if:true={filterOptions}>
+        <c-member-skills onadd={handleChange} options={filterOptions}></c-member-skills>
+        <c-team-list  member-list={members} options={filterOptions}></c-team-list>
+    </template>
+</template>

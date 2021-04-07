@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <lightning-combobox name="teams" label="Team"  options={options}  onchange={handleChange} > </lightning-combobox> 
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+            <template for:each={memList} for:item="member">
+                <lightning-layout-item key={member.Id}  size="8" class="slds-var-p-around_x-small">
+                    <div class="slds-box">
+                        <p class="slds-var-m-bottom_xx-small">Name   : {member.Name}</p>
+                        <p class="slds-var-m-bottom_xx-small">Team   : {member.Team__r.Name}</p>
+                        <p class="slds-var-m-bottom_xx-small">Skills : {member.Skills__c}</p>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+</lightning-card>
+</template>

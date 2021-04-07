@@ -1,0 +1,29 @@
+<template>   
+    <lightning-card title="Create Team Member Skill">  
+      <lightning-record-edit-form id="teamForm" object-api-name="Team_Member__c"   
+        vertical-align="stretch" title="Team Member Skill Form" onsuccess={handleTeamSuccess}  
+        onsubmit={handleOnTeamSubmit}>  
+        <lightning-messages>  
+        </lightning-messages>  
+        <lightning-layout vertical-align="stretch" multiple-rows="true">  
+          <lightning-layout-item flexibility="auto" size="12">  
+            <lightning-input-field field-name='Name'></lightning-input-field>  
+          </lightning-layout-item> 
+         <lightning-layout-item flexibility="auto" size="12">  
+           <lightning-combobox name="teams" label="Team"  options={options} onchange={handleSelect}> </lightning-combobox> 
+         </lightning-layout-item>		 
+          <lightning-layout-item flexibility="auto" >  
+            <lightning-input-field field-name='Skills__c'></lightning-input-field>  
+          </lightning-layout-item>  
+        </lightning-layout>  
+        <lightning-layout vertical-align="stretch">  
+          <lightning-layout-item flexibility="auto" >  
+            <lightning-button variant="brand" type="submit" name="save" label="Save"  
+              style="padding-left: 0.75rem;">  
+            </lightning-button>   
+          </lightning-layout-item>  
+          <span></span>
+        </lightning-layout>  
+      </lightning-record-edit-form>  
+    </lightning-card>  
+  </template>  
